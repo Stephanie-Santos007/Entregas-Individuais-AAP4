@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho 2 - Gestão de Itens e CEP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 650px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            background-color: #e9ecef;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #1a252f;
+        }
+
+        .erro {
+            color: red;
+            font-size: 12px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <header>
+            <h1>Sistema de Gestão</h1>
+        </header>
+
+        <section id="cadastro">
+            <h2>Cadastrar Novo Item</h2>
+            <form id="form-cadastro">
+                <label for="nome">Nome do Item:</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Cadeira">
+                <span class="erro" id="erro-nome"></span>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade" placeholder="Ex: 10">
+                <span class="erro" id="erro-quantidade"></span>
+
+                <label for="preco">Preço Unitário (R$):</label>
+                <input type="number" step="0.01" id="preco" name="preco" placeholder="Ex: 150.00">
+                <span class="erro" id="erro-preco"></span>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9">
+                <span class="erro" id="erro-cep"></span>
+
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" readonly>
+
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" placeholder="Ex: 123">
+                <span class="erro" id="erro-numero"></span>
+
+                <label for="complemento">Complemento (Opcional):</label>
+                <input type="text" id="complemento" name="complemento" placeholder="Ex: Apto 42 / Bloco B">
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" readonly>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" readonly>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" readonly>
+
+                <button type="submit">Salvar Cadastro</button>
+            </form>
+        </section>
+
+        <section id="visualizacao">
+            <h2>Itens Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Qtd</th>
+                        <th>Preço</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cadeira</td>
+                        <td>10</td>
+                        <td>R$ 150,00</td>
+                        <td>São Paulo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <p>Fatec Barueri - GTI (4º Semestre) | Stephanie Ferreira dos Santos</p>
+        </footer>
+    </main>
+
+    <script src="script Trabalho2(AAP4).js"></script>
+</body>
+</html>
